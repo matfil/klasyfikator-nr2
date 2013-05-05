@@ -1,19 +1,16 @@
-#include <iostream>
 #include "atrib.h"
+#include "data.h"
+#include <iostream>
+#include <string>
 
 int main ()
 {
-	atribute tr;
-	tr.add('a','b');
-	tr.add('a','f');
-	tr.add('b','b');
-	tr.add('a','b');
-	tr.add('b','f');
-	tr.add('b','b');
-	tr.show();
+	std::string filename;
+	std::cin >> filename;
 
-	std::cout << "b = " << tr.NoAtrib('b') << std::endl;
-	
+	data wejscie(filename);
+
+	wejscie.show();
 
 	return 0;
 }

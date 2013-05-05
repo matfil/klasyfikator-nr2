@@ -46,8 +46,7 @@ void atribute::add(char c = ' ', char a = ' ') // dodawanie kolejnych par klasa 
 } // void atribute::add(char c, char a)
 
 void atribute::show()
-{
-	std::map<char,int>::iterator it;
+{ 
 
 	for(unsigned int i = 0; i < atrib.size(); i++)
 	{
@@ -56,7 +55,7 @@ void atribute::show()
 	
 	std::cout << std::endl; // linia odstępu
 
-	for(it = atr.begin(); it != atr.end(); ++it)
+	for(std::map<char,int>::iterator it = atr.begin(); it != atr.end(); ++it)
 	{
 		std::cout << it -> first << " " << it -> second << std::endl;
 	}

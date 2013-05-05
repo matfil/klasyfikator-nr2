@@ -16,7 +16,8 @@ class data
 	protected:
 	public:
 	data();
-	data(std::string filename);
+	data(const std::string& filename);
+	void show();
 };
 
 #endif
