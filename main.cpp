@@ -11,5 +11,9 @@ int main ()
 	tr.add('b','f');
 	tr.add('b','b');
 	tr.show();
+
+	std::cout << "b = " << tr.NoAtrib('b') << std::endl;
+	
+
 	return 0;
 }

@@ -16,6 +16,8 @@ class atribute
 				char atr;
 				Assctns(char,char);
 		};
+		
+		std::vector<char> atrib;
 
 		std::vector<Assctns> associations;
 
@@ -25,6 +27,8 @@ class atribute
 	public:
 		void add (char,char);
 		void show();
+		int NoAtrib (char)const; //Number of Atributes of this type
+		int NoAsses (char,char)const; //Number of Accociations
 };
 
 #endif

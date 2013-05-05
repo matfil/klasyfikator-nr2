@@ -1,4 +1,5 @@
 #include "atrib.h"
+#include <map>
 #include <iostream>
 
 atribute::Assctns::Assctns(char c = ' ', char a = ' ')
@@ -29,6 +30,7 @@ void atribute::add(char c = ' ', char a = ' ') // dodawanie kolejnych par klasa 
 			}
 		}
 	}	
+	atrib.push_back(a);
 	if(i < associations.size()) // czyli jak już był na liście
 	{
 		AssCounter[i]++; // zwiększam ilość wystąpień o 1
@@ -46,6 +48,14 @@ void atribute::add(char c = ' ', char a = ' ') // dodawanie kolejnych par klasa 
 void atribute::show()
 {
 	std::map<char,int>::iterator it;
+
+	for(unsigned int i = 0; i < atrib.size(); i++)
+	{
+		std::cout << atrib[i] << std::endl;
+	}
+	
+	std::cout << std::endl; // linia odstępu
+
 	for(it = atr.begin(); it != atr.end(); ++it)
 	{
 		std::cout << it -> first << " " << it -> second << std::endl;
@@ -57,4 +67,18 @@ void atribute::show()
 	{
 		std::cout << associations[i].cls << " " << associations[i].atr << " = " << AssCounter[i] << std::endl;
 	}
+}
+
+int atribute::NoAtrib(char a)const
+{
+	return atr.find(a)->second;
+}
+int atribute::NoAsses(char c,char a)const
+{
+	for(unsigned int i = 0; i < associations.size(); i++)
+	{
+		if (c == associations[i].cls && a == associations[i].atr)
+			return AssCounter[i];
+	}
+	return 0;
 }
