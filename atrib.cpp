@@ -68,11 +68,29 @@ void atribute::show()
 	}
 }
 
-int atribute::NoAtrib(char a)const
+int atribute::getNoDiffValues ()const
+{
+	return atr.size();
+}
+
+char atribute::getNthValue(int nth)
+{
+	std::map<char,int>::iterator it = atr.begin();
+	for(;nth>0;nth--)
+		++it;
+	return it->first;
+}
+
+char atribute::getAtribValue(int x)const
+{
+	return atrib[x];
+}
+
+int atribute::getNoAtrib(char a)const
 {
 	return atr.find(a)->second;
 }
-int atribute::NoAsses(char c,char a)const
+int atribute::getNoAsses(char c,char a)const
 {
 	for(unsigned int i = 0; i < associations.size(); i++)
 	{

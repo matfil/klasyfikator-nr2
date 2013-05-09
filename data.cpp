@@ -1,4 +1,5 @@
 #include "data.h"
+#include "atrib.h"
 #include <fstream>
 #include <iostream>
 
@@ -19,10 +20,10 @@ data::data(const std::string& filename)
 	NoAtributes = 0;
 
 	input.open(filename.c_str(),std::ifstream::in); //otworzenie strumienia do czytania
-	ok = input >> line;//pobranie pierwszej linijki
+	ok = input >> line; //pobranie pierwszej linijki
 	NoAtributes = (line.size()-1)/2; //obliczenie ilości atrubutów
 
-	for(unsigned int i = 0; i <= NoAtributes; i++)//przygotowanie vectora atrybutów
+	for(unsigned int i = 0; i <= NoAtributes; i++) //przygotowanie vectora atrybutów
 	{
 		dataset.push_back(tmp);
 	}
@@ -54,4 +55,50 @@ void data::show()
 	{
 		dataset[i].show();
 	}
+}
+
+char data::HFrqCls(int c,char v)
+{
+	char cls = ' ';
+	int high = 0;
+	for(int i = 0; i < dataset[0].getNoDiffValues(); i++)
+	{
+		if (high < dataset[c].getNoAsses(dataset[0].getNthValue(i),v))
+		{ 
+			cls = dataset[0].getNthValue(i);
+			high = dataset[c].getNoAsses(dataset[0].getNthValue(i),v);
+		}
+		
+	}
+	return cls;
+}
+
+unsigned int data::NoEnt()const
+{
+	return NoEntries;
+}
+
+unsigned int data::NoAtr()const
+{
+	return NoAtributes;
+}
+
+char data::getAtrVal (int c, int r)const
+{
+	return dataset[c].getAtribValue(r);
+}
+
+int data::getNoAtrib(int c, char v)const
+{
+	return dataset[c].getNoAtrib(v);
+}
+
+int data::getNoAsses(int col, char c, char a)const
+{
+	return dataset[col].getNoAsses(c,a);
+}
+
+atribute data::operator[] (int i)const
+{
+	return dataset[i];
 }

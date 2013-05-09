@@ -18,17 +18,19 @@ class atribute
 		};
 		
 		std::vector<char> atrib;
-
 		std::vector<Assctns> associations;
-
 		std::vector<int> AssCounter; //association counter
 
 	protected:
 	public:
 		void add (char,char);
 		void show();
-		int NoAtrib (char)const; //Number of Atributes of this type
-		int NoAsses (char,char)const; //Number of Accociations
+		int getNoDiffValues ()const; //get Number of different Values
+		char getNthValue(int); //no duplications
+		char getAtribValue (int)const; //get #th Atribute Value (possible duplications)
+		int getNoAtrib (char)const; //get Number of Atributes
+		int getNoAsses (char,char)const; //get Number of Accociations
 };
+
 
 #endif

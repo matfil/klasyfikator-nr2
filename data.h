@@ -17,7 +17,14 @@ class data
 	public:
 	data();
 	data(const std::string& filename);
+	char HFrqCls(int,char);
 	void show();
+	unsigned int NoEnt()const;
+	unsigned int NoAtr()const;
+	char getAtrVal(int,int)const;//column, row
+	int getNoAtrib(int,char)const;//column, value
+	int getNoAsses(int,char,char)const;
+	atribute operator[](int)const;
 };
 
 #endif
