@@ -62,6 +62,18 @@ void data::show()
 	}
 }
 
+void data::niceShow()
+{
+	for(unsigned int i = 0; i < NoEntries; i++)
+	{
+		for (unsigned int k = 0; k <= NoAtributes; k++)
+		{
+			std::cout << this->getAtrVal(k,i)<<",";
+		}
+		std::cout<<std::endl;
+	}
+}
+
 char data::HFrqCls(int c,char v)
 {
 	char cls = ' ';

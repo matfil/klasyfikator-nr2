@@ -98,7 +98,9 @@ void klas1R::show()
 	{
 		std::cout<< "cls " << effect[i].cls << " atr " <<effect[i].atr << " val " <<effect[i].val << std::endl;
 	}
+	
+	std::cout << "wynik"<<std::endl;
 
-	target.show();
+	target.niceShow();
 
 }

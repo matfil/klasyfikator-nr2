@@ -7,6 +7,7 @@
 int main ()
 {
 	std::string filename;
+	std::cout<< "plik z danymi"<<std::endl;
 	std::cin >> filename;
 
 	/*
@@ -19,6 +20,9 @@ int main ()
 
 	test.learn();
 	
+	std::cout<< "plik analizowany"<<std::endl;
+	std::cin >> filename;
+
 	test.setTarget(filename);
 
 	test.useknowledge();

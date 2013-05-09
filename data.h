@@ -18,6 +18,7 @@ class data
 	data();
 	data(const std::string& filename);
 	char HFrqCls(int,char);
+	void niceShow();
 	void show();
 	unsigned int NoEnt()const;
 	unsigned int NoAtr()const;
