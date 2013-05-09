@@ -48,6 +48,11 @@ void data::AddEntry(std::string& line)
 	}
 }
 
+void data::changeAtr(int i,  atribute n)
+{
+	dataset[i] = n;
+}
+
 void data::show()
 {
 	std::cout << "NoEntries = " << NoEntries << " NoAtributes = " <<NoAtributes << std::endl;

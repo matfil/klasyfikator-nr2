@@ -19,6 +19,10 @@ int main ()
 
 	test.learn();
 	
+	test.setTarget(filename);
+
+	test.useknowledge();
+
 	test.show();
 
 	return 0;

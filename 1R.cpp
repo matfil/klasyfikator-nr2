@@ -65,6 +65,23 @@ void klas1R::setTarget(std::string& filename)
 
 void klas1R::useknowledge()
 {
+	unsigned int i;
+	for(unsigned int e = 0; e < zestaw.NoEnt(); e++)
+	{
+		for(i = 0; i < effect.size(); i++)
+		{
+		 	if (zestaw.getAtrVal(effect[i].atr,e) == effect[i].val)
+		 	{
+				used.add('*',effect[i].cls);
+				break;
+		 	}
+		}
+		if (i == effect.size())
+		{
+			used.add('*','*');
+		}
+	}
+	target.changeAtr(0,used);
 }
 
 klas1R::klas1R(std::string& filename): klas(filename)
@@ -73,7 +90,7 @@ klas1R::klas1R(std::string& filename): klas(filename)
 
 void klas1R::show()
 {
-	zestaw.show();
+	//zestaw.show();
 	
 	std::cout << "klasyfikator 1R" << std::endl;
 
@@ -81,5 +98,7 @@ void klas1R::show()
 	{
 		std::cout<< "cls " << effect[i].cls << " atr " <<effect[i].atr << " val " <<effect[i].val << std::endl;
 	}
+
+	target.show();
 
 }

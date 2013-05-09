@@ -21,6 +21,7 @@ class data
 	void show();
 	unsigned int NoEnt()const;
 	unsigned int NoAtr()const;
+	void changeAtr(int, atribute);
 	char getAtrVal(int,int)const;//column, row
 	int getNoAtrib(int,char)const;//column, value
 	int getNoAsses(int,char,char)const;
